@@ -14,14 +14,12 @@ const calculateExercises = (
 ): result => {
   const trainingDays = excerciseHours.reduce(
     (totalTrainingDays, currentDayHours) => {
-      console.log("the training days", currentDayHours);
       totalTrainingDays =
         currentDayHours > 0 ? totalTrainingDays + 1 : totalTrainingDays + 0;
       return totalTrainingDays;
     },
     0
   );
-  console.log("the training days", trainingDays);
   const average =
     excerciseHours.reduce((totalTrainingDays, currentDayHours) => {
       return totalTrainingDays + currentDayHours;
@@ -42,4 +40,9 @@ const calculateExercises = (
   };
 };
 
-console.log(calculateExercises([3, 0, 2, 4.5, 0, 3, 0], 2));
+console.log(
+  calculateExercises(
+    process.argv.slice(2, -1).map((arr) => Number(arr)),
+    Number(process.argv[process.argv.length - 1])
+  )
+);
