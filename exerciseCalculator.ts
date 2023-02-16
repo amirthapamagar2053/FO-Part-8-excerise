@@ -40,9 +40,11 @@ const calculateExercises = (
   };
 };
 
-console.log(
-  calculateExercises(
-    process.argv.slice(2, -1).map((arr) => Number(arr)),
-    Number(process.argv[process.argv.length - 1])
-  )
-);
+// console.log(
+//   calculateExercises(
+//     process.argv.slice(2, -1).map((arr) => Number(arr)),
+//     Number(process.argv[process.argv.length - 1])
+//   )
+// );
+
+export default calculateExercises;
